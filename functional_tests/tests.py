@@ -39,11 +39,11 @@ class NewVisitorTest(LiveServerTestCase):
     # is tying fly-fishing lures)
     inputbox.send_keys('Buy peacock feathers')
 
-    # When she hits enter, the page updates, and now the page lists
-    # "1: Buy peacock feathers" as an item in a to-do list
+    # When she hits enter, she is taken to a new URL, and now the page lists
+    # "1: Buy peacock feathers" as an item in a to-do list table
     inputbox.send_keys(Keys.ENTER)
-    table = self.browser.find_element_by_id('id_list_table')
-    rows = table.find_elements_by_tag_name('tr')
+    edith_list_url = self.browser.current_url
+    self.assertRegex(edith_list_url, '/lists/.+')
     self.check_for_row_in_list_table('1: Buy peacock feathers')
 
     # There is still a text box inviting her to add another item. She
