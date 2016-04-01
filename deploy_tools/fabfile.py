@@ -4,7 +4,7 @@ from fabric.network import ssh
 import random
 
 ssh.util.log_to_file("paramiko.log", 10)
-env.key_filename = ['/Users/gbataille/.ssh/TDD_Python_key.pem']
+env.key_filename = ['/Users/gbataille/.ssh/elspeth.pem']
 
 REPO_URL = 'https://github.com/gbataille/tdd-python'
 
