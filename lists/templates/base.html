@@ -13,7 +13,7 @@
         {% if user.email %}
           <a class="btn navbar-btn navbar-right" 
              id="id_logout"
-             href="{% url logout %}">
+             href="{% url 'logout' %}">
             Sign out</a>
           <span class="navbar-text navbar-right">
             Logged in as {{ user.email }}
